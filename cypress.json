@@ -1,0 +1,4 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "integrationFolder": "/Users/hochiho/vue-typescript-webpack-example/src"
+}
