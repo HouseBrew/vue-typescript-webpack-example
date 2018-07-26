@@ -4,11 +4,11 @@ const commonConfig = require('./webpack.common.conf')
 const convert = require('koa-connect');
 const history = require('connect-history-api-fallback');
 const proxy = require('http-proxy-middleware');
-const cypressWebpackPlugin = require('cypress-webpack-plugin')
-const cypress = require('cypress')
 const resolve = (rel) => path.resolve(__dirname, rel)
+const tdd = require('tdd-webpack-plugin')
+const cypress = require('cypress')
 
-class CypressTDDPlugin extends cypressWebpackPlugin.TestDrivenDevPlugin {
+class CypressTDDPlugin extends tdd.TestDrivenDevPlugin {
   test(specs) {
     // console.log(this.options)
     let specString = [...specs].join(',')
