@@ -29,20 +29,6 @@ module.exports = {
                 image: 'xlink:href'
               }
             }
-            
-          }
-        ]
-      },
-      {
-        test: /\.ts$/,
-        enforce: 'pre',
-        use: [
-          {
-            loader: 'tslint-loader',
-            options: {
-              configFile: resolve("tslint.json"),
-              tsConfigFile: resolve("tsconfig.json")
-            }
           }
         ]
       },
@@ -58,6 +44,19 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.ts$/,
+      //   enforce: 'pre',
+      //   use: [
+      //     {
+      //       loader: 'tslint-loader',
+      //       options: {
+      //         configFile: resolve("tslint.json"),
+      //         tsConfigFile: resolve("tsconfig.json")
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.js?$/,
         include: ["./src"],
@@ -82,7 +81,13 @@ module.exports = {
           'css-loader',
           'stylus-loader'
         ]
-      }      
+      },
+      {
+        test: /\.spec.js$/,
+        use: [
+          'cypress-loader'
+        ]
+      }
     ]
   },
   plugins: [
@@ -105,7 +110,6 @@ module.exports = {
     }),
 
     new VueLoaderPlugin()  // responsible for clone all rules other than .vue to apply them to corresponding language block
-
   ],
   resolve: {
     extensions: [".ts", ".js", ".css", ".json", ".vue", ".stylus", ".styl"],

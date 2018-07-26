@@ -17,8 +17,8 @@
       "es2017"
     ],
     "typeRoots": [
-      "node_modules/@types",
-      "src/typings"
+      "./node_modules/@types",
+      "./src/typings"
     ],
     "baseUrl": "./src",
     "paths": {

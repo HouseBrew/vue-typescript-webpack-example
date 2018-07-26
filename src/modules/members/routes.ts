@@ -7,5 +7,4 @@ const routes = [
     component: Home
   }
 ]
-
 export {routes}
